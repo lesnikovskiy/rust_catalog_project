@@ -1,3 +1,5 @@
+use std::fmt::format;
+
 #[derive(Debug)]
 enum Media {
     Book {
@@ -11,6 +13,8 @@ enum Media {
     Audiobook {
         title: String,
     },
+    Podcast(u32),
+    Placeholder,
 }
 
 impl Media {
@@ -28,6 +32,8 @@ impl Media {
             Media::Book { title, author } => format!("Book: {} {}", title, author),
             Media::Movie { title, director } => format!("Movie: {} {}", title, director),
             Media::Audiobook { title } => format!("Audiobook: {}", title),
+            Media::Podcast(episode_number) => format!("Podcast: {}", episode_number),
+            Media::Placeholder => format!("Placeholder"),
         }
     }
 }
@@ -62,6 +68,10 @@ fn main() {
         author: String::from("Bad Author"),
     };
 
+    let podcast = Media::Podcast(135);
+
+    let placeholder = Media::Placeholder;
+
     // println!("{}", audiobook.description());
     // println!("{}", good_movie.description());
     // println!("{}", bad_book.description());
@@ -71,6 +81,8 @@ fn main() {
     catalog.add(audiobook);
     catalog.add(good_movie);
     catalog.add(bad_book);
+    catalog.add(podcast);
+    catalog.add(placeholder);
 
     println!("{:#?}", catalog);
 }
