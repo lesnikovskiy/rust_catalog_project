@@ -25,9 +25,9 @@ impl Media {
         //     String::from("Media description")
         // }
         match self {
-            Media::Book { title, author } => { format!("Book: {} {}", title, author) }
-            Media::Movie { title, director } => { format!("Movie: {} {}", title, director) }
-            Media::Audiobook { title } => { format!("Audiobook: {}", title) }
+            Media::Book { title, author } => format!("Book: {} {}", title, author),
+            Media::Movie { title, director } => format!("Movie: {} {}", title, director),
+            Media::Audiobook { title } => format!("Audiobook: {}", title),
         }
     }
 }
