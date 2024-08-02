@@ -28,6 +28,7 @@ impl Media {
 }
 
 fn print_media(media: &Media) {
+    println!("{}", media.description());
     println!("{:#?}", media);
 }
 
@@ -44,11 +45,7 @@ fn main() {
         author: String::from("Bad Author"),
     };
 
-    audiobook.description();
-    good_movie.description();
-    bad_book.description();
-
-    print_media(&audiobook);
-    print_media(&good_movie);
-    print_media(&bad_book);
+    println!("{}", audiobook.description());
+    println!("{}", good_movie.description());
+    println!("{}", bad_book.description());
 }
