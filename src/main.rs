@@ -88,19 +88,6 @@ fn main() {
     catalog.add(podcast);
     catalog.add(placeholder);
 
-    let item = catalog.get_by_index(5);
-    match item {
-        Some(value) => {
-            println!("Item: {:#?}", value);
-        }
-        None => {
-            println!("No value here!");
-        }
-    }
-
-    if let Some(value) = catalog.get_by_index(1) {
-        println!("Item: {:#?}", value);
-    } else {
-        println!("No value!!!!");
-    }
+    let item = catalog.get_by_index(0).unwrap();
+    println!("Item: {:#?}", item);
 }
