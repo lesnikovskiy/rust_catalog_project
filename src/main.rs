@@ -84,5 +84,5 @@ fn main() {
     catalog.add(podcast);
     catalog.add(placeholder);
 
-    println!("{:#?}", catalog);
+    println!("{:#?}", catalog.items.get(0));
 }
