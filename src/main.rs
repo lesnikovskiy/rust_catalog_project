@@ -97,7 +97,7 @@ fn main() {
     catalog.add(podcast);
     catalog.add(placeholder);
 
-    let item = catalog.get_by_index(4);
+    let item = catalog.get_by_index(5);
     match item {
         MightHaveAValue::ThereIsAValue(value) => {
             println!("Item: {:#?}", value);
@@ -105,5 +105,11 @@ fn main() {
         MightHaveAValue::NoValueAvailable => {
             println!("No value here!");
         }
+    }
+
+    if let MightHaveAValue::ThereIsAValue(value) = catalog.get_by_index(0) {
+        println!("Item: {:#?}", value);
+    } else {
+        println!("No value!!!!");
     }
 }
