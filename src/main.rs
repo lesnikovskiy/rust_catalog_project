@@ -88,6 +88,6 @@ fn main() {
     catalog.add(podcast);
     catalog.add(placeholder);
 
-    let item = catalog.get_by_index(0).unwrap();
+    let item = catalog.get_by_index(10).expect("No value");
     println!("Item: {:#?}", item);
 }
