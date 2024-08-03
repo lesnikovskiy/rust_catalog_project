@@ -88,6 +88,7 @@ fn main() {
     catalog.add(podcast);
     catalog.add(placeholder);
 
-    let item = catalog.get_by_index(10).expect("No value");
+    let placeholder = Media::Placeholder;
+    let item = catalog.get_by_index(10).unwrap_or(&placeholder);
     println!("Item: {:#?}", item);
 }
